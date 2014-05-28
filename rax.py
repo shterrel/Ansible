@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# WE ALL AGREE, ZACH IS STUPID
 # HI Ethan 
 # (c) 2013, Jesse Keating <jesse.keating@rackspace.com>
 #
