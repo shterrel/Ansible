@@ -1,0 +1,30 @@
+- name: Build a Cloud Server
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+    - name: Server build request
+      local_action:
+        module: rax
+        credentials: ~/.rackspace_cloud_credentials
+        region: DFW
+        name: squirrel-bot
+        flavor: general1-8
+        image: b65e0583-0b9b-419d-b6c0-ab212d5aec4b
+        wait: yes
+        state: present
+        key_name: id_rsa
+        networks:
+          - private
+          - public
+      register: rax
+#  roles:
+#    - monitoring
+
+#        - name: Set authorized key took from file
+#          authorized_key:
+#            user: root
+#            state: present
+#            key: "{{ lookup('file', '/Users/davi5652/.ssh/id_rsa.pub') }}"
+  #roles:
+  #- marcelnijenhof.firewalld
